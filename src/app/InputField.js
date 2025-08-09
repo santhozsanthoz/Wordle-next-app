@@ -44,12 +44,17 @@ function BoxInputs({ separator, length, value, onChange, finVal, currentIndex, s
 
   const submitVal = async () => {
     if (value.length == 5) {
+      if(specialWords.includes(value.toUpperCase()) && finVal == value) {
+        setIsSubmitted(true);
+        openPopover(<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}><div>{"You Won!"}</div><div><Button style={{ margin: "20px" }} variant="contained" color="success" onClick={reloadPage}>New Game</Button></div></div>);
+        setCurrentIndex(-1);
+        return;
+      }
       if (!await isAWord(value)) {
         openPopover("Word Not Found");
         return;
       }
-      setCurrentIndex(() => currentIndex + 1);
-      setIsSubmitted(() => true);
+      setIsSubmitted(true);
       for (let i = 0; i < value.length; i++) {
         setKeyColors((prev) => prev.map(row =>
           row.map(cell => {
@@ -66,6 +71,7 @@ function BoxInputs({ separator, length, value, onChange, finVal, currentIndex, s
         setCurrentIndex(-1);
         return;
       }
+      setCurrentIndex(currentIndex + 1);
       if (indexCurr == totalInputFields) {
         openPopover(<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}><div>{"The answer was : "}<b>{finVal.toUpperCase()}</b> </div><div><Button style={{ margin: "20px" }} variant="contained" color="success" onClick={reloadPage}>New Game</Button></div></div>)
       }
