@@ -1,0 +1,10 @@
+fileignoreconfig:
+- filename: package-lock.json
+  checksum: 6095953b758db7f3b644c9ad360e5375b08dc31d99744b3364915594b931b2bb
+- filename: src/app/InputField.js
+  checksum: 75fff45034e25b8a49bade87a5637443503fe5329ba81d442374f23182f84656
+- filename: src/app/KeyColorValues.js
+  checksum: 5ad20a77776aa9f91fec016bdf53d230674cf426e7c1d9557f966148f81c71a4
+- filename: src/app/main.js
+  checksum: 19e7c099b6536cfc620603ffb3d82d67c11a84e05a1f8128001bd8d9a4e6abf3
+version: "1.0"
