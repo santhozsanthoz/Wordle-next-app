@@ -46,7 +46,7 @@ function BoxInputs({ separator, length, value, onChange, finVal, currentIndex, s
     if (value.length == 5) {
       if(specialWords.includes(value.toUpperCase()) && finVal == value) {
         setIsSubmitted(true);
-        openPopover(<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}><div>{"You Won!"}</div><div><Button style={{ margin: "20px" }} variant="contained" color="success" onClick={reloadPage}>New Game</Button></div></div>);
+        openPopover(<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}><div>{"You Won!"}</div><div><img src="https://media.tenor.com/ET7xLBoXJMwAAAAM/celebration-confetti.gif" alt="You Won!" width={100} /></div><div><Button style={{ margin: "20px" }} variant="contained" color="success" onClick={reloadPage}>New Game</Button></div></div>);
         setCurrentIndex(-1);
         return;
       }
@@ -67,7 +67,7 @@ function BoxInputs({ separator, length, value, onChange, finVal, currentIndex, s
       }
 
       if (finVal == value) {
-        openPopover(<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}><div>{"You Won!"}</div><div><Button style={{ margin: "20px" }} variant="contained" color="success" onClick={reloadPage}>New Game</Button></div></div>);
+        openPopover(<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}><div>{"You Won!"}</div><div><img src="https://media.tenor.com/ET7xLBoXJMwAAAAM/celebration-confetti.gif" alt="You Won!" width={100} /></div><div><Button style={{ margin: "20px" }} variant="contained" color="success" onClick={reloadPage}>New Game</Button></div></div>);
         setCurrentIndex(-1);
         return;
       }
